@@ -1,5 +1,6 @@
 # test/app.py
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 import random
 import string
 import smtplib
@@ -12,6 +13,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 app = Flask(__name__)
+CORS(app)
 
 # Email configuration
 SMTP_SERVER = 'smtp.gmail.com'  # Gmail SMTP server
